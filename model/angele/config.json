@@ -1,0 +1,11 @@
+{
+    "model": "angele.pth",
+    "feat_index": "trained_IVF1260_Flat_nprobe_1_v2.index",
+    "speaker_id": 0,
+
+    "name": "Angele",
+    "author": "Aalex",
+    "source": "All",
+    "note": "Trained in RVC v2, All the album",
+    "icon": "Angele.png"
+}

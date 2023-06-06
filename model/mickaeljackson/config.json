@@ -1,0 +1,11 @@
+{
+    "model": "michael-jackson.pth",
+    "feat_index": "added_IVF1448_Flat_nprobe_1_v2.index",
+    "speaker_id": 0,
+
+    "name": "Mickael Jackson",
+    "author": "REU Music",
+    "source": "ALL",
+    "note": "Trained by me with a 20 minute dataset, based on ERA Off the Wall + Thriller",
+    "icon": "Mickael.png"
+}

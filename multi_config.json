@@ -1,0 +1,9 @@
+{
+    "models": [
+        "mickaeljackson", "macmiller", "leto", "arianagrande", "zamdane", "oboy"
+    ],
+    "examples": {
+        "vc": [],
+        "tts_vc": []
+    }
+}

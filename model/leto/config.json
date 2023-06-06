@@ -1,0 +1,11 @@
+{
+    "model": "leto.pth",
+    "feat_index": "added_IVF408_Flat_nprobe_1_v2.index",
+    "speaker_id": 0,
+
+    "name": "Leto",
+    "author": "BartPoint",
+    "source": "Album",
+    "note": "Trained in RVC v2, Crepes 128, 600 epochs",
+    "icon": "Leto.png"
+}
