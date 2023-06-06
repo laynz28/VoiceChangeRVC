@@ -1,0 +1,11 @@
+{
+    "model": "CaptainPrice-BarrySloane.pth",
+    "feat_index": "added_IVF3998_Flat_nprobe_1_v2.index",
+    "speaker_id": 0,
+
+    "name": "Captain Price",
+    "author": "McMessenger",
+    "source": "MW",
+    "note": "Trained in RVC v2 (150 epochs), 52 minutes of in-game vocal lines (and some cutscenes) pulled directly from MW2019, BOCW, and MWII.",
+    "icon": "Captain.png"
+}
