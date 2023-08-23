@@ -38,3 +38,4 @@ model/hamza/Hamza.png filter=lfs diff=lfs merge=lfs -text
 model/gambino/Hamza.png filter=lfs diff=lfs merge=lfs -text
 model/angele/Angele.png filter=lfs diff=lfs merge=lfs -text
 model/leto/Leto.png filter=lfs diff=lfs merge=lfs -text
+model/marinelepen/marine.png filter=lfs diff=lfs merge=lfs -text

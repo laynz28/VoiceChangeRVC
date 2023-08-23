@@ -1,0 +1,11 @@
+{
+    "model": "Marine_Lepen.pth",
+    "feat_index": "added_IVF2394_Flat_nprobe_1.index",
+    "speaker_id": 0,
+
+    "name": "Marine LePen",
+    "author": "Pépito",
+    "source": "Pépito",
+    "note": "1h de recherche/edit + 3h de training",
+    "icon": "marine.png"
+}
