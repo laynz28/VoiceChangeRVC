@@ -143,6 +143,7 @@ for model_name in multi_cfg.get('models'):
         net_g=net_g,
         if_f0=if_f0,
         target_sr=tgt_sr
+        test=model_version
     ))
         
 print(f'Models loaded: {len(loaded_models)}')
@@ -200,6 +201,8 @@ def vc_func(
     checksum = hashlib.sha512()
     checksum.update(audio_npy.tobytes())
 
+    print(test)
+    
     output_audio = model['vc'].pipeline(
         hubert_model,
         model['net_g'],
@@ -216,6 +219,7 @@ def vc_func(
         model['target_sr'],
         resample,
         rms_mix_rate,
+        model['test']
     )
 
     out_sr = (
