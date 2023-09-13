@@ -220,6 +220,7 @@ def vc_func(
         resample,
         rms_mix_rate,
         model['test']
+        0.5    
     )
 
     out_sr = (
