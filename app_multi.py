@@ -142,7 +142,7 @@ for model_name in multi_cfg.get('models'):
         vc=vc,
         net_g=net_g,
         if_f0=if_f0,
-        target_sr=tgt_sr
+        target_sr=tgt_sr,
         test=model_version
     ))
         
