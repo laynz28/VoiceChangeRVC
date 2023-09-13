@@ -18,11 +18,23 @@ import edge_tts
 
 import config
 import util
-from infer_pack.models import (
+from fairseq import checkpoint_utils
+from lib.infer_pack.models import (
+    SynthesizerTrnMs256NSFsid,
+    SynthesizerTrnMs256NSFsid_nono,
     SynthesizerTrnMs768NSFsid,
-    SynthesizerTrnMs768NSFsid_nono
+    SynthesizerTrnMs768NSFsid_nono,
 )
 from vc_infer_pipeline import VC
+from config import Config
+config = Config()
+logging.getLogger("numba").setLevel(logging.WARNING)
+force_support = None
+if config.unsupported is False:
+    if config.device == "mps" or config.device == "cpu":
+        force_support = False
+else:
+    force_support = True
     
 # Reference: https://huggingface.co/spaces/zomehwh/rvc-models/blob/main/app.py#L21  # noqa
 in_hf_space = getenv('SYSTEM') == 'spaces'
