@@ -216,7 +216,6 @@ def vc_func(
         model['target_sr'],
         resample,
         rms_mix_rate,
-        'v2'
     )
 
     out_sr = (
