@@ -70,7 +70,16 @@ app = gr.Blocks(
 )
 
 # Load hubert model
-hubert_model = util.load_hubert_model(config.device, args.hubert)
+models, _, _ = checkpoint_utils.load_model_ensemble_and_task(
+    ["hubert_base.pt"],
+    suffix="",
+)
+hubert_model = models[0]
+hubert_model = hubert_model.to(config.device)
+if config.is_half:
+    hubert_model = hubert_model.half()
+else:
+    hubert_model = hubert_model.float()
 hubert_model.eval()
 
 # Load models
@@ -91,26 +100,29 @@ for model_name in multi_cfg.get('models'):
         map_location='cpu'
     )
     tgt_sr = cpt['config'][-1]
-    cpt['config'][-3] = cpt['weight']['emb_g.weight'].shape[0]  # n_spk
-
-    if_f0 = cpt.get('f0', 1)
-    net_g: Union[SynthesizerTrnMs768NSFsid, SynthesizerTrnMs768NSFsid_nono]
-    if if_f0 == 1:
-        net_g = SynthesizerTrnMs768NSFsid(
-            *cpt['config'],
-            is_half=util.is_half(config.device)
-        )
-    else:
-        net_g = SynthesizerTrnMs768NSFsid_nono(*cpt['config'])
-
+    cpt["config"][-3] = cpt["weight"]["emb_g.weight"].shape[0]  # n_spk
+    if_f0 = cpt.get("f0", 1)
+    version = cpt.get("version", "v1")
+    if version == "v1":
+        if if_f0 == 1:
+            net_g = SynthesizerTrnMs256NSFsid(*cpt["config"], is_half=config.is_half)
+        else:
+            net_g = SynthesizerTrnMs256NSFsid_nono(*cpt["config"])
+        model_version = "V1"
+    elif version == "v2":
+        if if_f0 == 1:
+            net_g = SynthesizerTrnMs768NSFsid(*cpt["config"], is_half=config.is_half)
+        else:
+            net_g = SynthesizerTrnMs768NSFsid_nono(*cpt["config"])
+        model_version = "V2"
     del net_g.enc_q
 
-    # According to original code, this thing seems necessary.
-    print(net_g.load_state_dict(cpt['weight'], strict=False))
-
+    print(net_g.load_state_dict(cpt["weight"], strict=False))
     net_g.eval().to(config.device)
-    net_g = net_g.half() if util.is_half(config.device) else net_g.float()
-
+    if config.is_half:
+        net_g = net_g.half()
+    else:
+        net_g = net_g.float()
     vc = VC(tgt_sr, config)
     
     loaded_models.append(dict(
