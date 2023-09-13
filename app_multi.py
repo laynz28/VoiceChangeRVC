@@ -19,7 +19,7 @@ import edge_tts
 import config
 import util
 from fairseq import checkpoint_utils
-from lib.infer_pack.models import (
+from infer_pack.models import (
     SynthesizerTrnMs256NSFsid,
     SynthesizerTrnMs256NSFsid_nono,
     SynthesizerTrnMs768NSFsid,
