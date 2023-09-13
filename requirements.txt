@@ -14,3 +14,8 @@ torchcrepe
 tensorboard
 tensorboardX
 onnxruntime
+numpy==1.23.5
+wheel
+setuptools
+
+
