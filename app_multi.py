@@ -201,7 +201,7 @@ def vc_func(
     checksum = hashlib.sha512()
     checksum.update(audio_npy.tobytes())
 
-    print(test)
+    print(model['test'])
     
     output_audio = model['vc'].pipeline(
         hubert_model,
