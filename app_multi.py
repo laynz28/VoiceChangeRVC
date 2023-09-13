@@ -28,7 +28,6 @@ from infer_pack.models import (
 from vc_infer_pipeline import VC
 from config import Config
 config = Config()
-logging.getLogger("numba").setLevel(logging.WARNING)
 force_support = None
 if config.unsupported is False:
     if config.device == "mps" or config.device == "cpu":
