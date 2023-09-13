@@ -10,4 +10,7 @@ faiss-cpu==1.7.3
 praat-parselmouth>=0.4.2
 librosa==0.9.1
 edge-tts
-torchcrepe==0.0.18
+torchcrepe
+tensorboard
+tensorboardX
+onnxruntime
