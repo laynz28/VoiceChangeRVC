@@ -1,15 +1,9 @@
 # VoiceChange
 
+                                                          RVC interface
 
-An easy-to-use Voice Conversion framework based on VITS.
-
-
-
-
-
-
-
-
+                                                          
+project based on RVC-WebUI A lot of inspiration from what’s already out there, including zomehwh/rvc-models & DJQmUKV/rvc-inference.
 
 
 
