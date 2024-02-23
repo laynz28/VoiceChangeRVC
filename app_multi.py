@@ -360,8 +360,8 @@ with app:
             )
             f0_method = gr.Radio(
                 label='f0 methods',
-                choices=['pm', 'harvest', 'crepe'],
-                value='pm',
+                choices=['pm', 'crepe', 'rmvpe',],
+                value='rmvpe',
                 interactive=True
             )
 
