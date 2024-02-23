@@ -1,6 +1,6 @@
 # VoiceChange
 
-                                                          RVC interface
+RVC interface
 
                                                           
 project based on RVC-WebUI A lot of inspiration from what’s already out there, including zomehwh/rvc-models & DJQmUKV/rvc-inference.
