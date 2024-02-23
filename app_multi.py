@@ -76,7 +76,6 @@ app_css = '''
 
 app = gr.Blocks(
     theme='Hev832/EasyAndCool'),
-    css=app_css,
     analytics_enabled=False
 )
 
