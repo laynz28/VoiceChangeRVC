@@ -74,10 +74,7 @@ app_css = '''
 }
 '''
 
-app = gr.Blocks(
-    theme='Hev832/EasyAndCool'),
-    analytics_enabled=False
-)
+app = gr.Blocks(theme='Hev832/EasyAndCool')
 
 # Load hubert model
 models, _, _ = checkpoint_utils.load_model_ensemble_and_task(
