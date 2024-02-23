@@ -75,7 +75,7 @@ app_css = '''
 '''
 
 app = gr.Blocks(
-    theme=gr.themes.Soft(primary_hue="orange", secondary_hue="slate"),
+    theme='Hev832/EasyAndCool'),
     css=app_css,
     analytics_enabled=False
 )
@@ -493,4 +493,4 @@ app.queue(
     concurrency_count=1,
     max_size=20,
     api_open=args.api
-).launch()
+).launch(debug=True, share=True)
